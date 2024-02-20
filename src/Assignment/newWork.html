@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        thead,
+        tr,
+        td,
+        th {
+            border: 1px solid rgb(0, 0, 0);
+            border-collapse: collapse;
+            padding: 10px;
+        }
+
+        table {
+            margin-left: auto;
+            margin-right: auto;
+            width: 70%;
+        }
+
+        #Mobile {
+            margin-top: 10px;
+
+        }
+
+        .serach {
+            width: 85%;
+            display: flex;
+            justify-content: end;
+            margin-top: 100px;
+        }
+
+        #search {
+            padding: 8px;
+            width: 250px;
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="email"></h1>
+    <div class="serach">
+        <input type="search" name="search" id="search" placeholder="Search Here....." onkeyup="stuDetails()">
+    </div>
+    <div id="Mobile">
+
+    </div>
+    <h1>Search Filter data using  Name,Branch or Id's</h1>
+    <!-- <table>
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>ID</th>
+                <th>STUDENT NAME</th>
+                <th>STUDENT BRANCH</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>${i+1}</td>
+                <td>${studentID[i]}</td>
+                <td>${studentNames[i]}</td>
+                <td>${studentBranch[i]}</td>
+                
+            </tr>
+        </tbody>
+    </table> -->
+    <script>
+        let studentNames = 'Anil,Prashanth,Karthik,SaiTeja,Devendar,Latha'
+        studentNames = studentNames.split(",")
+
+        let studentBranch = 'Civil,Meachanical,CSE,EEE,IT,Civil'
+        studentBranch = studentBranch.split(",")
+
+        let studentID = '01,02,03,04,05,06'
+        studentID = studentID.split(",")
+
+        function stuDetails() {
+            let output = ""
+            output += ` 
+            <table>`
+            output +=
+                `  <thead>
+                    <tr>
+                        <th>S.No</th>
+                        <th>ID</th>
+                        <th>STUDENT NAME</th>
+                        <th>STUDENT BRANCH</th>
+                        </tr>
+                        </thead>`
+
+            let sertext = document.getElementById("search").value;
+            for (let i = 0; i < studentNames.length; i++) {
+                if (((studentNames[i].toLocaleLowerCase()).includes(sertext)) || (studentID[i].includes(sertext)) || (
+                        (studentBranch[i].toLocaleLowerCase()).includes(sertext))) {
+                    output += ` 
+                                <tbody>
+                                    <tr>
+                                        <td>${i+1}</td>
+                                        <td>ID_${studentID[i]}</td>
+                                        <td>${studentNames[i]}</td>
+                                        <td>${studentBranch[i]}</td>
+                                        
+                                        </tr>
+                                        </tbody>
+                                        `
+                }
+            }
+            output += `
+                                </table>
+                                `
+            document.getElementById("Mobile").innerHTML = output;
+        }
+        stuDetails()
+    </script>
+    <!-- <script>
+        // String
+        const userEmailId = "prashanthr@gmail.com";
+        const userEmailId1 = "spandana@outlook.com";
+        const spiltUser = userEmailId.split('@');
+        let sliceUser = spiltUser[0].slice(0, 3);
+        let output = sliceUser.padEnd(spiltUser[0].length, "*") + '@' + spiltUser[1]
+        document.getElementById("email").innerHTML = output;
+        
+        // Mobile Number
+        const mobile = 9876543210;
+        let phoneNumber = mobile.toString();
+        output1 = phoneNumber.slice(0, 2).padEnd(phoneNumber.length - 2, "*") + phoneNumber.slice(-2)
+
+        document.getElementById("Mobile").innerHTML = output1;
+    </script> -->
+
+</body>
+
+</html>

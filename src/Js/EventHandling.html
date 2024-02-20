@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling</title>
+    <link rel="stylesheet" href="/src/Bootstrp/css/bootstrap.min.css">
+    <style>
+        form {
+            margin: 50px;
+        }
+        #error{
+            display: none;
+            color: red;
+        }
+        #sucess{
+            display: none;
+            color: rgb(9, 255, 0);
+        }
+    </style>
+</head>
+
+<body>
+    <form action="#" >
+        <div class="form-control1">
+            <label for="name">Password</label>
+            <input class="form-control mb-2" type="password" id="pwd" placeholder="please Enter password"  >
+            <span id="error">min 6 Charactors</span>
+            <span id="sucess">vaild</span>
+        </div>
+        <button class="btn btn-primary" id="Submit">Submit</button>
+    </form>
+
+    <script>
+        const sub = document.querySelector('#Submit');
+        sub.addEventListener('click', () => { 
+            const pwd = document.querySelector('#pwd').value;
+            if (pwd.length <= 6) {
+                document.querySelector("#error").style.display="block";
+                document.querySelector("#sucess").style.display="none";
+
+            }
+          else {
+                document.querySelector("#error").style.display="none";
+                document.querySelector("#sucess").style.display="block";
+            }
+        })
+    </script>
+</body>
+
+</html>

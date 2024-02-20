@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Flexbox</title>
+   <style>
+    body{
+        background-color: rgb(243, 235, 235);
+
+    }
+    .flexBox{
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        background-color: rgb(243, 235, 235);
+    }
+    .card{
+       min-width: 200px;
+        min-height: 250px;
+        /* background-color: gray; */
+        box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.3);
+        margin: 7px;
+        border-radius: 15px 0 15px 0 ;
+        border: 1px dotted gray;
+
+    }
+    .card img{
+        width: 95%;
+        /* height: 70px; */
+        padding: 5px;
+        border-radius: 15px 0 15px 0 ;
+       display: flex;
+       margin-left: auto;
+       margin-right: auto;
+       
+    }
+    .card p{
+        text-align: center;
+        /* margin-top: 20px; */
+    }
+   </style>
+</head>
+<body>
+    <div class="flexBox">
+        <div class="card">
+            <img src="/public/assets/Computers/13.jpg" alt="">
+            <p>Computer,HP</p>
+        </div>
+        <div class="card">
+            <img src="/public/assets/Computers/14.jpg" alt="">
+            <p>Computer,DELL</p>
+        </div>
+        <div class="card">
+            <img src="/public/assets/Computers/3.jpg" alt="">
+            <p>Computer,LENOVO</p>
+        </div>
+        <div class="card">
+            <img src="/public/assets/Computers/4.jpg" alt="">
+            <p>Computer,DELL</p>
+        </div>
+        <div class="card">
+            <img src="/public/assets/Computers/5.jpg" alt="">
+            <p>Computer</p>
+        </div>
+        <div class="card">
+            <img src="/public/assets/Computers/6.jpg" alt="">
+            <p>Computer</p>
+        </div>
+        <div class="card">
+            <img src="/public/assets/Computers/7.jpg" alt="">
+            <p>Computer</p>
+        </div>
+        <div class="card">
+            <img src="/public/assets/Computers/8.jpg" alt="">
+            <p>Computer</p>
+        </div>
+        <div class="card">
+            <img src="/public/assets/Computers/9.jpg" alt="">
+            <p>Computer</p>
+        </div>
+        <div class="card">
+            <img src="/public/assets/Computers/10.jpg" alt="">
+            <p>Computer</p>
+        </div>
+        <div class="card">
+            <img src="/public/assets/Computers/11.jpg" alt="">
+            <p>Computer</p>
+        </div>
+        <div class="card">
+            <img src="/public/assets/Computers/12.jpg" alt="">
+            <p>Computer</p>
+        </div>
+
+    </div>  
+</body>
+</html>

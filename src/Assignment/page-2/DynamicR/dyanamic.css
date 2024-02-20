@@ -1,0 +1,41 @@
+.nav {
+    margin-right: 20px;
+}
+
+.nav a {
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.card {
+    width: 180px;
+    height: 200px;
+    margin: 5px;
+}
+
+.Tcard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    cursor: pointer;
+}
+
+.card:hover {
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+
+}
+
+button {
+    background-color: #4CAF50;
+    /* Green */
+    padding: 10px;
+    color: white;
+    outline: none;
+    border: none;
+    margin-left: 15px;
+}
+
+button:hover {
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+}

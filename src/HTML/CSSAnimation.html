@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animation</title>
+    <style>
+        .spin {
+
+            /* background-color: transparent; */
+            /* border: 2px solid gray ; */
+            /* offset-anchor:inherit; */
+            /* border-radius: 50px; */
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .bal .Play:focus + .dinimg  {
+            animation: anims 2s linear infinite;
+            animation-play-state: running;
+        }
+        .Play:focus {
+            background-color: rgb(20, 0, 39);  
+            color: aliceblue;
+        }
+       
+        .Pause:focus{
+            background-color: rgb(20, 0, 39);
+            color: aliceblue;
+        }
+
+        .bal .Pause:focus + .dinimg  {
+        
+            animation-play-state: paused;
+        }
+        .dinimg{
+            margin-top: 20px;
+        }
+
+        @keyframes anims {
+            0% {
+                transform: rotate(0);
+                /* background-color: blue; */
+            }
+
+            100% {
+                transform: rotate(360deg);
+                /* background-color: saddlebrown; */
+            }
+        }
+
+        button {
+            margin-top: 100px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- CSS Animation: Scenario: Create a button that, when clicked, triggers a CSS animation to make it spin. Ensure 
+that the animation is smooth and includes a5 pause and resume functionality.  -->
+ 
+    <div class="spin">
+        <div class="bal"> 
+            <button class="Pause">Pause
+            </button>
+            <button class="Play">Play</button>
+            <div class="dinimg"> 
+                <img src="/public/assets/Kfc/spin-wheel-png-3.png" alt="">
+            </div>
+        </div>
+        <div class="div">
+        </div>
+
+    </div>
+</body>
+
+</html>

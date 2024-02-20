@@ -1,0 +1,15 @@
+.fede{
+    width: 200px;
+    height: 200px;
+    background-color: black;
+    color: white;
+    animation:fede 2s;
+}
+@keyframes fede{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}

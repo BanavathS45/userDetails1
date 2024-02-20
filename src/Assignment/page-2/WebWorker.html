@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Worker</title>
+    <link rel="stylesheet" href="/src/Bootstrp/css/bootstrap.min.css">
+</head>
+
+<body>
+    <!-- Web Worker Usage: Scenario: Optimize the performance of a computationally intensive task by offloading it to a web worker. Demonstrate the use of web workers in JavaScript. -->
+    <div class="container mt-5">
+        <h2 id="large"></h2>
+        <h2 id="hi"></h2>
+        <button class="btn btn-primary" id="larBtn">Large Number</button>
+        <button class="btn btn-success" id="hiBtn">Hi !</button>
+    </div>
+    <script>
+        document.querySelector('#larBtn').addEventListener('click', function () {
+            let webworker = new Worker("WebWorker.js");
+            webworker.postMessage("start worker");
+            webworker.onmessage = function name(e) {
+                document.querySelector('#large').innerHTML = e.data
+            }
+
+        })
+        document.querySelector('#hiBtn').addEventListener('click', function () {
+            document.querySelector('#hi').innerHTML += "hi"
+        })
+    </script>
+    <!-- Web workers are giving us the possibility to write multi-threaded Javascript, which does not block the DOM. Even the Asynchronous operations block the DOM to some extent. On the other side, web workers help us solve this problem, escaping the single-threaded environment and reaching a higher performance of our web pages.
+
+In order to use:
+
+Web workers live in their own file (Not interacting with the User Interface)
+Functions are Passed By Copy
+No global variables are allowed -->
+</body>
+
+</html>

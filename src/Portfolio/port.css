@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.navbar {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  padding-left: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* background-color: black; */
+  /* opacity: 0.2; */
+  z-index: 9999;
+}
+#logo {
+  color: white;
+  text-shadow: 2px 1px 10px rgb(0, 234, 255);
+  text-transform: uppercase;
+}
+#logo:hover {
+  text-shadow: 2px 1px 10px rgb(255, 8, 0);
+}
+.Nav-menu {
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.listitem {
+  list-style: none;
+  font-size: 20px;
+  font-weight: 600;
+}
+.Nav-menu a {
+  color: #ffffff;
+}
+.active {
+  background-color: rgb(255, 238, 0);
+  border-radius: 4px;
+  padding: 10px 15px;
+  color: black !important;
+}
+/* //////////Home////////// */
+#hero-page {
+  background-image: url("/public/P_assets/intro-bg.jpg");
+  /* background-color: aquamarine; */
+  height: 100vh;
+  /* z-index: -1; */
+}
+#hero-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  opacity: 0.8;
+  background-color: black;
+}
+.info {
+  position: absolute;
+  color: white;
+  z-index: 999;
+  height: 100vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.info-Btn .btn {
+  color: white;
+  margin-top: 15px;
+  font-weight: 600;
+}
+.info-Btn .btn:hover {
+  background-color: yellow;
+  color: rgb(0, 0, 0);
+}
+/* ////////////project////////////// */
+#project {
+  display: flex;
+  justify-content: space-around;
+}
+.project-title {
+  text-align: center;
+  text-shadow: 2px 1px 10px rgb(0, 234, 255);
+  margin-bottom: 50px;
+}
+.card-btn {
+  display: flex;
+  justify-content: space-between;
+}
+.card {
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+  height: 100%;
+  bottom: 15px;
+}
+/* ///////projectMore///// */
+.projectMore {
+  width: 100%;
+  height: 50vh;
+  background-image: url(/public/P_assets/react2.webp);
+  margin-bottom: 50px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-position: center; */
+}
+.projectMore::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 50vh;
+  width: 100%;
+  opacity: 0.8;
+  background-color: black;
+}

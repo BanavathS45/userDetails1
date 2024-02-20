@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Visualization</title>
+
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <link rel="stylesheet" href="/src/Bootstrp/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+
+        <div id="chart" class="border w-100"></div>
+    </div>
+
+
+
+    <script>
+        const data = [10, 50, 100, 150, 200,30,70,120];
+        //         const chart = d3.select("#chart")
+        //         .append("chart")
+        //         .data(data)
+        //         .enter()
+        //         .append("div")
+        //   .style("height", d => `${d}px`)
+        //   .text(d => d);
+        const svgWidth = 500;
+        const svgHeight =700;
+
+        const svg = d3.select("#chart")
+            .append("svg")
+            .attr("width", svgWidth)
+            .attr("height", svgHeight);
+
+        // Bind data to bars
+        const widthScale = d3.scaleLinear()
+            .domain([0, 200])
+            .range([0, svgWidth])
+
+        const color = d3.scaleLinear()
+            .domain([0, 200])
+            .range(["red", "blue"])
+        const bars = svg.selectAll("rect")
+            .data(data)
+            .enter()
+            .append("rect")
+            //better visualization
+            .attr("height", 50)
+
+            .attr("width", function (d) {
+                return widthScale(d)
+            })
+            .attr("fill", function (d) {
+                return color(d)
+            })
+            .attr("y", function (d, i) { // Adjust spacing between bars
+                return i * 80
+            })
+       
+    </script>
+
+</body>
+
+</html>

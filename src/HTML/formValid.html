@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        .form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            
+        }
+
+        form {
+            border: 1px dashed gray;
+            padding: 20px;
+            border-radius: 0 20px 0 20px;
+            box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.3);
+
+        }
+        
+
+        label {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        input {
+            margin: 10px;
+            display: flex;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 10px;
+            width: 250px;
+            border-radius: 10px;
+            outline: none;
+            border: none;
+        }
+        input:focus{
+            border-color: green;
+            box-shadow: 1px 4px 8px rgba(27, 28, 28, 0.3);
+            /* border: 1px solid gray; */
+
+        }
+
+        .submit {
+            /* display: flex;
+            margin-left: auto;
+            margin-right: auto; */
+            padding: 10px 15px;
+            background-color: green;
+            color: white;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+            transition: 1s;
+
+        }
+
+        .submit:hover {
+            box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(45deg,red,green,blue);
+            scale: 1.1;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <!-- 2. Form Validation: Scenario: Build a form with fields like name, email, and password. Implement client-side validation for the email field to ensure it's a valid email address.  -->
+    <div class="form">
+       
+        <form action="">
+          
+            <h2 style="text-align: center; margin-bottom: 30px;color: rgb(1, 55, 93);">Registar Form</h2>
+            <div class="name">
+                <label for="name">Name</label>
+                <input type="text" placeholder="Enter Name" required minlength="5" autofocus autocomplete="yes"> 
+            </div>
+            <div class="name">
+                <label for="name">Email</label>
+                <input type="email" placeholder="Enter email" required pattern="[^\s@]+@[^\s@]+\.[^\s@]+"
+                    title="abcd@gmail.com" autocomplete="yes">
+            </div>
+            <div class="name">
+                <label for="name">Phone</label>
+                <input type="tel" placeholder="Enter Phone" required maxlength="10" pattern="[7-9]{1}[0-9]{9}"
+                    title="Phone number with 7-9 and remaing 9 digit with 0-9" autocomplete="yes">
+            </div>
+            <div class="name">
+                <label for="name">password</label>
+                <input type="password" placeholder="Enter password" required maxlength="50" minlength="8"
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters Ex:@Abcd1235" autocomplete="yes">
+            </div>
+            <button type="submit" class="submit"  >Submit</button>
+        </form>
+    </div>
+
+</body>
+
+</html>

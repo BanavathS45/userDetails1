@@ -1,0 +1,42 @@
+// Closure: Scenario: Explain the concept of closures in JavaScript. Provide an example that demonstrates the use 
+// of closures in a practical scenario.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clouser</title>
+</head>
+<body>
+    <script>
+        // 1. A function that returns another function (closure)
+function makeAdder(x){
+    return function(y){
+        return x + y;
+        }
+        }
+        let add5 = makeAdder(5);
+        console.log(add5(7)); // outputs 12
+        // In this example, the outer function "makeAdder" takes one argument and returns an inner function. The inner function has access
+        // 2. Accessing outer scope from an inner function
+        function outer(){
+            let count = 0;
+            return {
+                increment: function() {
+                    count++;
+                    return count;
+                    },
+                    getCount: function(){
+                        return count;
+                        }
+                        };
+                        }
+                        const myCounter = outer();
+                        console.log(myCounter.increment()); //outputs 1
+                        console.log(myCounter.getCount())     //outputs 1
+                        // 3. Using closures for data privacy and encapsulation
+
+ 
+    </script>
+</body>
+</html>
