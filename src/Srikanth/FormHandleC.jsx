@@ -174,12 +174,12 @@ const FormHandleC = () => {
 
   return (
     <div id="registar">
-      <h3
-        style={{ margin: "20px 0 0 30px", color: "blue", cursor: "pointer" }}
+      <button
+        style={{ margin: "20px 0 0 30px", color: "white", cursor: "pointer" }}
         onClick={HandleAdd}
       >
         {add ? "" : " Add+"}
-      </h3>
+      </button>
       <p className="visable">{visable} </p>
 
       {add ? (
@@ -373,8 +373,8 @@ const FormHandleC = () => {
                       <td>{index + 1}</td>
                       <td>{id}</td>
                       <td>{name}</td>
-                      <td>{email}</td>
-                      <td>{phone}</td>
+                      <td><a href={`mailto:${email}`}>{email}</a></td>
+                      <td><a href={`tel:${phone}`}>{phone}</a></td>
                       <td style={{ width: "150px" }}>
                         {showPassword ? password : "********"}{" "}
                       </td>
